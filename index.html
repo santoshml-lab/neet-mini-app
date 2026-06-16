@@ -1,11 +1,17 @@
 <input id="text" placeholder="Enter text">
-<button onclick="addData()">Save</button>
+
+<button onclick="addData()">
+    Save
+</button>
+
 <button onclick="
-supabase.from('notes')
+window.supabaseClient
+.from('notes')
 .insert([{ text: 'mobile test' }])
+.select()
 .then(r => alert(JSON.stringify(r)))
 ">
-Test Save
+    Test Save
 </button>
 
 <div id="list"></div>
